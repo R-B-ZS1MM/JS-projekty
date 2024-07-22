@@ -43,9 +43,9 @@ div.container form button:hover {
     color: rgb(231, 246, 73);
     font-weight: bold;
 }
-#result {
+/* #result {
     display: none;
-}
+} */
 #total {
     font-size: 1.8rem;
     font-weight: bold;

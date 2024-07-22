@@ -1,20 +1,14 @@
-const btnCountAge = document.querySelector('button');
-const birthday = document.getElementById('birthday');
-btnCountAge.addEventListener('click', calculateAge);
-
-function calculateAge() {
-const birthdayValue = birthday.value;
-if (birthdayValue === '') {
-alert("Proszę wpisać datę urodzenia");
-} else {
-    const now = new Date();
-    const birthdayDate = new Date(birthdayValue);
-    console.log(now);
-    console.log(birthdayValue);
-    let age = now.getFullYear() - birthdayDate.getFullYear();   
-    if (now.getMonth() < birthdayDate.getMonth() || (now.getMonth() === birthdayDate.getMonth() && now.getDate() < birthdayDate.getDate())) {
-        age--;
-    }
-    document.getElementById("result").textContent = `Twój wiek to: ${age}`;
+const btnCount = document.querySelector("#calculateTip");
+function calculateTotal() {
+  const billAmount = parseFloat(document.querySelector("#bill").value);
+  const tipPercentage = parseInt(document.querySelector("#tip").value);
+  console.log(billAmount, tipPercentage);
+  if (isNaN(billAmount) || isNaN(tipPercentage) || billAmount <= 0 || tipPercentage < 0) {
+    alert("Wprowadź poprawne wartości");
+  } else {
+    let totalAmount = billAmount + billAmount * (tipPercentage / 100);
+    document.querySelector("#total").textContent =
+      totalAmount.toFixed(2) + " zł";
+  }
 }
-}
+btnCount.addEventListener("click", calculateTotal);
