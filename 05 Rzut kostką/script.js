@@ -33,6 +33,7 @@ function getUnicodeForDice(rollResult) {
 function rollDice() {
   const rollResult = Math.floor(Math.random() * 6) + 1;
   const diceFace = getUnicodeForDice(rollResult);
+//   if (rollResult == 6) diceEl.style.color = 'red'; else diceEl.style.color = 'black';
   diceEl.innerHTML = diceFace;
   //   diceEl.innerHTML = `&#98${55+rollResult}`; // albo tak
   historyList.push(rollResult);
